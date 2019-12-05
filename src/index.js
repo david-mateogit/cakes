@@ -3,4 +3,4 @@ import ReactDom from 'react-dom';
 import './css/style.css';
 import Router from './components/Router';
 
-ReactDom.render(<Router />, document.getElementById('main'));
+ReactDom.render(<Router />, document.getElementById('root'));

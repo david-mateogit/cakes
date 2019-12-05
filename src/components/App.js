@@ -76,7 +76,7 @@ const App = props => {
   };
 
   return (
-    <div className="catch-of-the-day">
+    <div className="cakes">
       <div className="menu">
         <Header tagline="fresh seafood market" />
         <ul className="fishes">
