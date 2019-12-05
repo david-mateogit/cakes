@@ -1,6 +1,6 @@
 {
   "name": "cakes",
-  "version": "0.8",
+  "version": "0.0.2",
   "private": true,
   "dependencies": {
     "autoprefixer-stylus": "^1.0.0",
