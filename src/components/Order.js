@@ -21,7 +21,15 @@ const Order = ({ order, fishes, removeFromOrder }) => {
       return (
         <CSSTransition {...transitionOptions}>
           <li key={key}>
-            Sorry {fish ? fish.name : 'fish'} is no longer available
+            <p>Sorry {fish ? fish.name : 'fish'} is no longer available</p>
+            <button
+              type="button"
+              onClick={() => {
+                removeFromOrder(key);
+              }}
+            >
+              &times;
+            </button>
           </li>
         </CSSTransition>
       );
@@ -44,7 +52,6 @@ const Order = ({ order, fishes, removeFromOrder }) => {
             </span>
             <button
               type="button"
-              className="delete"
               onClick={() => {
                 removeFromOrder(key);
               }}
@@ -75,9 +82,7 @@ const Order = ({ order, fishes, removeFromOrder }) => {
       <h2>Order</h2>
       <TransitionGroup component="ul" className="order">
         {orderIds &&
-          orderIds.map(key => {
-            return renderOrder(key);
-          })}
+          orderIds.map(key => renderOrder(key))}
       </TransitionGroup>
       <div className="total">
         Total: <strong>{formatPrice(total)}</strong>
