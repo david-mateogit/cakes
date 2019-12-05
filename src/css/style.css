@@ -393,15 +393,6 @@ ul.order li {
   -webkit-box-align: center;
           align-items: center;
 }
-ul.order li:hover button {
-  display: inline;
-}
-ul.order li button {
-  border: 0;
-  display: none;
-  line-height: 1;
-  padding: 0;
-}
 ul.order li.total {
   font-weight: 600;
   border-bottom: 3px solid #000;
@@ -414,13 +405,23 @@ ul.order li.unavailable {
 ul.order li .price {
   font-size: 1.2rem;
 }
+ul.order li span.order-span {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+ul.order li span.order-span button {
+  opacity: 0;
+}
+ul.order li span.order-span:hover button {
+  opacity: 1;
+}
 ul.order li span.count {
   position: relative;
   overflow: hidden;
   float: left;
-}
-ul.order li span.count span {
-  display: inline-block;
 }
 .order-title {
   text-align: center;
@@ -582,10 +583,6 @@ input[type=submit].warning:after {
 button.success:after,
 input[type=submit].success:after {
   background: #2dc22d;
-}
-button.delete,
-input[type=submit].delete {
-  margin-left: auto;
 }
 button.github,
 input[type=submit].github,

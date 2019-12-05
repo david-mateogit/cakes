@@ -84,7 +84,7 @@ header.top
 
 // Folding Transforms
 // Take off folding when not checked
-input#fold:not(:checked) ~ #main
+input#fold:not(:checked) ~ #root
   .cakes > *
       transform none
 
@@ -120,15 +120,8 @@ ul.order
     font-size 1.4rem
     justify-content space-between
     align-items center
-    &:hover
-      // padding 1rem 0
-      button
-        display inline
-    button
-      border 0
-      display none
-      line-height 1
-      padding 0
+
+
     &.total
       font-weight 600
       border-bottom 3px solid black
@@ -138,13 +131,21 @@ ul.order
       background lighten(red, 80%)
     .price
       font-size 1.2rem
+    span.order-span
+      display flex
+      justify-content space-between
+      width 100%
+      button
+        opacity 0
+      &:hover
+      // padding 1rem 0
+        button
+          opacity 1
     span.count
       position relative
       overflow hidden
       float left // only works if it's floated?!
-      span
-        display inline-block
-        // transition all 0.5s
+
 
 .order-title
   text-align center
@@ -266,8 +267,7 @@ button, input[type=submit]
   &.success
     &:after
       background green
-  &.delete
-    margin-left auto
+
 
   &.github, &.facebook, &.twitter
     border 0
