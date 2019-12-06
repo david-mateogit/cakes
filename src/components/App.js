@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import firebase from '../firebase';
 
@@ -15,19 +15,22 @@ const App = props => {
     JSON.parse(localStorage.getItem(storeId)) || {}
   );
 
-  const fishesRef = firebase.database().ref(`${storeId}/fishes/`);
-
-  useEffect(() => {
-    // Take a snapshot of the DB
-    fishesRef.on('value', snapshot => {
+  let unsubscribeFromFirebase;
+  const loadAllfishes = useCallback(() => {
+    unsubscribeFromFirebase = fishesRef.on('value', snapshot => {
       setFishes(snapshot.val());
     });
+  }, []);
 
+  const fishesRef = firebase.database().ref(`${storeId}/fishes/`);
+  useEffect(() => {
+    // Take a snapshot of the DB
+    loadAllfishes();
     return () => {
       // Stop the listener
-      fishesRef.off();
+      unsubscribeFromFirebase();
     };
-  }, [fishesRef]);
+  }, [loadAllfishes, unsubscribeFromFirebase]);
 
   useEffect(() => {
     localStorage.setItem(storeId, JSON.stringify(order));
@@ -57,9 +60,7 @@ const App = props => {
   };
 
   const loadSampleFishes = () => {
-    sampleFishes.map(fish => {
-      return addFish(fish);
-    });
+    sampleFishes.map(fish => addFish(fish));
   };
 
   const addToOrder = key => {
@@ -81,16 +82,14 @@ const App = props => {
         <Header tagline="fresh seafood market" />
         <ul className="fishes">
           {fishes &&
-            Object.keys(fishes).map(fish => {
-              return (
-                <Fish
-                  key={fish}
-                  index={fish}
-                  details={fishes[fish]}
-                  addToOrder={addToOrder}
-                />
-              );
-            })}
+            Object.keys(fishes).map(fish => (
+              <Fish
+                key={fish}
+                index={fish}
+                details={fishes[fish]}
+                addToOrder={addToOrder}
+              />
+            ))}
         </ul>
       </div>
       <Order fishes={fishes} order={order} removeFromOrder={removeFromOrder} />

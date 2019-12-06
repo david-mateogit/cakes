@@ -27,12 +27,7 @@ const AddFishForm = ({ addFish }) => {
   };
 
   return (
-    <form
-      className="fish-edit"
-      onSubmit={e => {
-        return createFish(e);
-      }}
-    >
+    <form className="fish-edit" onSubmit={e => createFish(e)}>
       <input
         type="text"
         name="name"

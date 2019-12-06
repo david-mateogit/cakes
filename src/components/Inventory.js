@@ -44,9 +44,7 @@ const Inventory = props => {
       const storeOwner = await storeRef
         .child('owner')
         .once('value')
-        .then(snapshot => {
-          return snapshot.val();
-        });
+        .then(snapshot => snapshot.val());
 
       // if there is no store owner, create one with current userid
       if (!storeOwner) {
@@ -69,7 +67,7 @@ const Inventory = props => {
     firebase.auth().onAuthStateChanged(user => {
       if (user) authHandler({ user });
     });
-  }, [authHandler]);
+  }, [authHandler, user, owner]);
 
   // logout button
   const logoutButton = (
@@ -108,17 +106,15 @@ const Inventory = props => {
           {picture}
         </div>
         {fishes &&
-          Object.keys(fishes).map(key => {
-            return (
-              <EditFishForm
-                key={key}
-                fish={fishes[key]}
-                updateFish={updateFish}
-                deleteFish={deleteFish}
-                index={key}
-              />
-            );
-          })}
+          Object.keys(fishes).map(key => (
+            <EditFishForm
+              key={key}
+              fish={fishes[key]}
+              updateFish={updateFish}
+              deleteFish={deleteFish}
+              index={key}
+            />
+          ))}
         <AddFishForm addFish={addFish} />
         <button type="button" onClick={loadSampleFishes}>
           Load Sample Fishes
