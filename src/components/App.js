@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import firebase from '../firebase';
 
@@ -15,26 +15,23 @@ const App = props => {
     JSON.parse(localStorage.getItem(storeId)) || {}
   );
 
-  let unsubscribeFromFirebase;
-  const loadAllfishes = useCallback(() => {
-    unsubscribeFromFirebase = fishesRef.on('value', snapshot => {
-      setFishes(snapshot.val());
-    });
-  }, []);
-
   const fishesRef = firebase.database().ref(`${storeId}/fishes/`);
   useEffect(() => {
     // Take a snapshot of the DB
-    loadAllfishes();
+    fishesRef.on('value', snapshot => {
+      setFishes(snapshot.val());
+    });
     return () => {
       // Stop the listener
-      unsubscribeFromFirebase();
+      fishesRef.off();
     };
-  }, [loadAllfishes, unsubscribeFromFirebase]);
+    // eslint-disable-next-line
+  }, []);
 
   useEffect(() => {
     localStorage.setItem(storeId, JSON.stringify(order));
-  }, [order, storeId]);
+    // eslint-disable-next-line
+  }, []);
 
   const addFish = fish => {
     const newFishKey = firebase

@@ -50,7 +50,6 @@ const Inventory = props => {
       if (!storeOwner) {
         storeRef.update({ owner: userId });
       }
-
       setOwner(storeOwner);
     },
     [storeRef]
@@ -121,7 +120,7 @@ const Inventory = props => {
         </button>
       </div>
     );
-  return <div>loading...</div>;
+  if (user !== owner) return <div>loading...</div>;
 };
 
 Inventory.propTypes = {
