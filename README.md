@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/64354a25-b601-470b-be93-8e8fca67501a/deploy-status)](https://app.netlify.com/sites/react-market-app/deploys)
+
 <br />
 <p align="center">
   <a href="https://github.com/david-mateogit/react-market-app">
@@ -12,7 +14,7 @@
     <a href="https://github.com/david-mateogit/react-market-app"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/david-mateogit/react-market-app">View Demo</a>
+    <a href="https://react-market-app.netlify.com/">View Demo</a>
     ·
     <a href="https://github.com/david-mateogit/react-market-app/issues">Report Bug</a>
     ·
@@ -53,13 +55,14 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-
 - npm
 
 ```sh
 npm install npm@latest -g
 ```
+
+- setup firebase database
+  [firebase](https://firebase.google.com/)
 
 ### Installation
 
@@ -87,9 +90,7 @@ REACT_APP_FB_DATABASE_URL=YOUR FIREBASE DATABASE URL
 
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+_For more examples, please refer to the [Firebase Docs](https://firebase.google.com/docs)_
 
 <!-- ROADMAP -->
 
@@ -108,12 +109,6 @@ Contributions are what make the open source community such an amazing place to b
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
-<!-- LICENSE -->
-
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
 
 <!-- CONTACT -->
 

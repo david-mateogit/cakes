@@ -1,9 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { formatPrice } from '../helpers';
+import React from "react";
+import PropTypes from "prop-types";
+import { formatPrice } from "../helpers";
 
-const Fish = ({ details: { name, price, status, desc, image }, addToOrder, index }) => {
-  const isAvailable = status === 'available';
+const Fish = ({
+  details: { name, price, status, desc, image },
+  addToOrder,
+  index,
+}) => {
+  const isAvailable = status === "available";
 
   const handleClick = () => {
     addToOrder(index);

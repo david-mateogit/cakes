@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import firebase from '../firebase';
+import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
+import firebase from "../firebase";
 
-import Header from './Header';
-import Order from './Order';
-import Inventory from './Inventory';
-import sampleFishes from '../sample-fishes';
-import Fish from './Fish';
+import Header from "./Header";
+import Order from "./Order";
+import Inventory from "./Inventory";
+import sampleFishes from "../sample-fishes";
+import Fish from "./Fish";
 
 const App = props => {
   const { storeId } = props.match.params;
@@ -18,7 +18,7 @@ const App = props => {
   const fishesRef = firebase.database().ref(`${storeId}/fishes/`);
   useEffect(() => {
     // Take a snapshot of the DB
-    fishesRef.on('value', snapshot => {
+    fishesRef.on("value", snapshot => {
       setFishes(snapshot.val());
     });
     return () => {
@@ -37,7 +37,7 @@ const App = props => {
     const newFishKey = firebase
       .database()
       .ref(storeId)
-      .child('fishes')
+      .child("fishes")
       .push().key;
     const fishObject = {};
     fishObject[newFishKey] = fish;
