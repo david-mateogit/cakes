@@ -1,22 +1,22 @@
 <br />
 <p align="center">
-  <a href="https://github.com/david-mateogit/react-restaurant-app">
+  <a href="https://github.com/david-mateogit/react-market-app">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Restaurant Menu App</h3>
+  <h3 align="center">Market Menu App</h3>
 
   <p align="center">
     This is a practice application following Wes Bos Course, now updated with React Hooks and new techniques.
     <br />
-    <a href="https://github.com/david-mateogit/react-restaurant-app"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/david-mateogit/react-market-app"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/david-mateogit/react-restaurant-app">View Demo</a>
+    <a href="https://github.com/david-mateogit/react-market-app">View Demo</a>
     ·
-    <a href="https://github.com/david-mateogit/react-restaurant-app/issues">Report Bug</a>
+    <a href="https://github.com/david-mateogit/react-market-app/issues">Report Bug</a>
     ·
-    <a href="https://github.com/david-mateogit/react-restaurant-app/issues">Request Feature</a>
+    <a href="https://github.com/david-mateogit/react-market-app/issues">Request Feature</a>
   </p>
 </p>
 
@@ -38,7 +38,7 @@
 
 ## About The Project
 
-[![Restaurant Menu React App][product-screenshot]](https://example.com)
+[![market Menu React App][product-screenshot]](https://example.com)
 
 ### Built With
 
@@ -63,10 +63,10 @@ npm install npm@latest -g
 
 ### Installation
 
-1. Clone the react-restaurant-app
+1. Clone the react-market-app
 
 ```sh
-git clone https://github.com/david-mateogit/react-restaurant-app.git
+git clone https://github.com/david-mateogit/react-market-app.git
 ```
 
 2. Install NPM packages
@@ -95,7 +95,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 ## Roadmap
 
-See the [open issues](https://github.com/david-mateogit/react-restaurant-app/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/david-mateogit/react-market-app/issues) for a list of proposed features (and known issues).
 
 <!-- CONTRIBUTING -->
 
@@ -121,7 +121,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 David Mateo - [@silenux](https://twitter.com/silenux) - davidmateo@outlook.com
 
-Project Link: [https://github.com/david-mateogit/react-restaurant-app](https://github.com/david-mateogit/react-restaurant-app)
+Project Link: [https://github.com/david-mateogit/react-market-app](https://github.com/david-mateogit/react-market-app)
 
 <!-- ACKNOWLEDGEMENTS -->
 
