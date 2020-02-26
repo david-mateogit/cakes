@@ -1,7 +1,7 @@
 {
-  "name": "cakes",
-  "version": "0.0.2",
-  "private": true,
+  "name": "react-restaurant-app",
+  "version": "0.7.",
+  "public": true,
   "dependencies": {
     "@craco/craco": "^5.6.2",
     "autoprefixer-stylus": "^1.0.0",
